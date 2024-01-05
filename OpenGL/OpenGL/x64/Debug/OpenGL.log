@@ -1,0 +1,5 @@
+﻿  Application.cpp
+  Application.obj : MSIL-Modulgefunden; inkrementelles Verknüpfen wird für MSIL deaktiviert; vollständiger Link wird durchgeführt
+Application.obj : warning LNK4248: Nicht aufgelöstes Typeref-Token (01000019) für "GLFWwindow". Das Image kann möglicherweise nicht ausgeführt werden.
+Application.obj : warning LNK4248: Nicht aufgelöstes Typeref-Token (01000021) für "GLFWmonitor". Das Image kann möglicherweise nicht ausgeführt werden.
+  OpenGL.vcxproj -> C:\Users\deyaa\Practice_OpenGL\OpenGL\x64\Debug\OpenGL.exe
