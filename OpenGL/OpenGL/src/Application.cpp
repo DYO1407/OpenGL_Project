@@ -1,6 +1,27 @@
 #include<iostream>
 #include <GLFW/glfw3.h>
+#include <assimp/Importer.hpp>
+#include <assimp/scene.h>
+#include <assimp/postprocess.h>
 
+
+void renderModel(const aiScene* scene) {
+    for (unsigned int i = 0; i < scene->mNumMeshes; ++i) {
+        const aiMesh* mesh = scene->mMeshes[i];
+
+        glBegin(GL_TRIANGLES);
+        for (unsigned int j = 0; j < mesh->mNumFaces; ++j) {
+            const aiFace& face = mesh->mFaces[j];
+            for (unsigned int k = 0; k < face.mNumIndices; ++k) {
+                unsigned int index = face.mIndices[k];
+                const aiVector3D& vertex = mesh->mVertices[index];
+                glVertex3f(vertex.x, vertex.y, vertex.z);
+            }
+        }
+        glEnd();
+    }
+
+}
 int main(void)
 {
     GLFWwindow* window;
